@@ -1,0 +1,5 @@
+<div class="todo-input-wrapper">
+    <input id="input" autofocus maxlength="40" type="text" placeholder="Новое задание" (keydown.enter)="addTodo()" [(ngModel)]="todoText" value={{todoText}}/>
+    <button class="btn btn-primary" (click)="addTodo()">Добавить</button>
+
+</div>

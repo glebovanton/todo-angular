@@ -1,0 +1,7 @@
+<div class="todoWrapper">
+    <button class="removeTodo" (click)="removeTodo()"> X</button>
+    <span class="through-line">{{todo.id}}. {{todo.text}}</span>
+    <input class="checkboxDo" title="input" (change)="checkTodo($event)" type="checkbox">
+</div>
+
+<!--ngModel="todo.checked"-->
