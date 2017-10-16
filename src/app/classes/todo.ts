@@ -1,11 +1,11 @@
 export class Todo {
     id: number;
     text: string;
-    checked: number;
+    checked: boolean;
 
-    constructor(id: number, text: string, checked: number) {
+    constructor(id: number, text: string, checked: boolean) {
         this.id = id;
         this.text = text;
-        this.checked = 0;
+        this.checked = false;
     }
 }

@@ -24,7 +24,7 @@ export class TodoItemComponent implements OnInit {
     }
 
     private checkTodo($event): void {
-        this.todoService.checkTodo(this.todo.checked, this.todo.id, $event);
+        this.todoService.checkTodo();
     }
-
+    /*this.todo.checked, this.todo.id, $event*/
 }

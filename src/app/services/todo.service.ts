@@ -10,17 +10,18 @@ export class TodoService {
 
 
     constructor() {
-        this.todos = [
-            new Todo(0, 'Make dinner tonight!', 0),
-            new Todo(1, 'Fold the laundry.', 0),
-            new Todo(2, 'Learn to make a React app!', 0)
+        this.todos = JSON.parse(localStorage.getItem('myCoolArrayOfTodos')) || [
+            new Todo(0, 'Make first note!', false),
+            new Todo(1, 'Understand, how it works', false),
+            new Todo(2, 'Delete finished task', false)
         ];
     }
-/*    let sObj = JSON.stringify(this.getTodos());*/
+
+    /*    let sObj = JSON.stringify(this.getTodos());*/
 
     public addTodo(text: string): void {
         if (text) {
-            const todo = new Todo(this.todos.length, text, 0);
+            const todo = new Todo(this.todos.length, text, false);
             this.todos.push(todo);
             this.nextId = this.todos.length;
             document.getElementById('input').classList.remove('inputFalse');
@@ -28,9 +29,11 @@ export class TodoService {
         } else {
             document.getElementById('input').classList.add('inputFalse');
         }
+        localStorage.setItem('myCoolArrayOfTodos', JSON.stringify(this.todos));
     }
 
     public getTodos(): Todo[] {
+        /*console.log(JSON.stringify(this.todos));*/
         return this.todos;
     }
 
@@ -39,22 +42,16 @@ export class TodoService {
         let count = 0;
         for (const todo of this.todos) {
             todo.id = count;
-            console.log(todo);
             count = count + 1;
         }
+        localStorage.setItem('myCoolArrayOfTodos', JSON.stringify(this.todos));
+
     }
 
 
-    public checkTodo(checked: number, id: number, $event): void {
-        console.log($event);
-        if (checked === 0) {
-            /*console.log(this.todos[id]);*/
-            this.todos[id].checked = 1;
-            $event.target.previousElementSibling.classList.add('through');
-        } else {
-            this.todos[id].checked = 0;
-            $event.target.previousElementSibling.classList.remove('through');
-        }
+    public checkTodo(): void {
+        console.log(this);
+        localStorage.setItem('myCoolArrayOfTodos', JSON.stringify(this.todos));
     }
 
 

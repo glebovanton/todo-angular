@@ -10,15 +10,15 @@
     padding: 8px;
 }
 .btn-primary{
-    color: rgba(73,204,249,1.0);
-    border-color: rgba(73,204,249,1.0);
+    color: rgba(0,151,6,0.74);
+    border-color: rgba(0,151,6,0.74);
     background-color: transparent;
 }
 input, input:focus{
     width:75%;
     border: none;
-    border-top: 2px solid rgba(73,204,249,1.0);
-    border-bottom:2px solid rgba(73,204,249,1.0);
+    border-top: 2px solid #009706;
+    border-bottom:2px solid #009706;
     margin-right: 10px;
     padding:5px;
     line-height: 17px;
@@ -35,6 +35,6 @@ input:active, :hover, :focus {
 input:focus{
     outline: none;
     border:none;
-    border-top: 2px solid rgba(73,204,249,1.0);
-    border-bottom:2px solid rgba(73,204,249,1.0);
+    border-top: 2px solid rgba(0,151,6,0.74);
+    border-bottom:2px solid rgba(0,151,6,0.74);
 }
